@@ -1,6 +1,11 @@
 package com.bootcoding.restaurant.app;
 
 import com.bootcoding.restaurant.Customer;
+import com.bootcoding.restaurant.CustomerDao;
+import com.bootcoding.restaurant.Dao.Customer_OrderDao;
+import com.bootcoding.restaurant.Dao.OrderDao;
+import com.bootcoding.restaurant.Dao.Order_Menu_ItemDao;
+import com.bootcoding.restaurant.Dao.VendorDao;
 import com.bootcoding.restaurant.Order;
 import com.bootcoding.restaurant.Vendor;
 
@@ -56,6 +61,21 @@ public class Application {
         System.out.println("Total Amount: " + order.getTotalAmount());
         System.out.println("Order Date: " + order.getOrderDate());
         System.out.println("Order Delivery Address : " + order.getDeliveryAddress());
+        CustomerDao customerDao = new CustomerDao();
+        customerDao.createTable();
 
+        VendorDao vendorDao = new VendorDao();
+        vendorDao.createTable();
+
+        OrderDao orderDao = new OrderDao();
+        orderDao.createTable();
+
+        Customer_OrderDao customer_orderDao = new Customer_OrderDao();
+        customer_orderDao.createTable();
+
+        Order_Menu_ItemDao order_menu_itemDao= new Order_Menu_ItemDao();
+        order_menu_itemDao.createTable();
+
+        System.out.println(" \"hello\"");
     }
 }
